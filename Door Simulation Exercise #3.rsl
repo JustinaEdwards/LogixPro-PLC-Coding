@@ -1,0 +1,350 @@
+FILE,LAD 2
+SOR,0 BST,1 XIC,I:1/0 XIC,I:1/3 NXB,1 XIC,I:1/3 XIC,O:2/0 XIO,O:2/1 BND,1 XIC,I:1/2 OTE,O:2/0 EOR,0
+RCM,((IF Open Button ON AND LS1 OK) OR (IF LS1 OK AND Motor Up ON AND Motor Down OFF)) AND Stop Button not pushed THEN Motor Up is ON
+SOR,1 BST,1 XIO,I:1/3 NXB,1 XIC,O:2/0 XIC,S:4/4 BND,1 OTE,O:2/3 EOR,1
+RCM,IF LS1 is open (tripped) THEN Open Lamp will be turned ON; IF Motor Up is running THEN Open Lamp will flash
+SOR,2 BST,1 XIC,I:1/1 XIO,I:1/4 NXB,1 XIO,I:1/4 XIC,O:2/1 XIO,O:2/0 BND,1 XIC,I:1/2 OTE,O:2/1 EOR,2
+RCM,((IF Close Button ON AND LS2 OK) OR (IF LS2 OK AND Motor Down ON AND Motor Up OFF)) AND Stop Button not pushed THEN Motor Down is ON
+SOR,3 BST,1 XIC,I:1/4 NXB,1 XIC,O:2/1 XIC,S:4/4 BND,1 OTE,O:2/4 EOR,3
+RCM,IF LS2 is closed (tripped) THEN Shut Lamp will be turned ON; IF Motor Down is running then Shut Lamp will flash
+SOR,4 XIC,I:1/3 XIO,I:1/4 BST,1 XIO,O:2/0 XIO,O:2/1 XIC,S:4/6 NXB,1 BST,2 XIC,O:2/0 XIO,O:2/1 NXB,2 XIO,O:2/0 XIC,O:2/1 BND,2 BND,1 OTE,O:2/2 EOR,4
+RCM,IF LS1 AND LS2 are OK AND Motors are OFF THEN Ajar Lamp will flash; IF LS1 AND LS2 are OK and a motor is ON THEN Ajar Lamp will be ON
+SOR,5 END,5
+RCM,
+FILE,SBR 3:
+SOR,0 END,0
+RCM,
+FILE,SBR 4:
+SOR,0 END,0
+RCM,
+FILE,SBR 5:
+SOR,0 END,0
+RCM,
+FILE,SBR 6:
+SOR,0 END,0
+RCM,
+FILE,SBR 7:
+SOR,0 END,0
+RCM,
+FILE,SBR 8:
+SOR,0 END,0
+RCM,
+FILE,SBR 9:
+SOR,0 END,0
+RCM,
+BTBL
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+NTBL
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+FTBL
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+SYMBOLS
+I:1/4 LS2
+I:1/0 Open Button
+I:1/3 LS1
+O:2/1 Motor Down
+O:2/0 Motor Up
+I:1/1 Close Button
+O:2/3 Open Lamp
+O:2/4 Shut Lamp
+I:1/2 Stop Button
+O:2/2 Ajar Lamp
+S:4/4 Counter/Flash
+S:4/6 Flash 1/4 of the speed
